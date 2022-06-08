@@ -1,0 +1,49 @@
+<% include partial/header%>
+    <h2>
+        <%= article.title%>
+    </h2>
+    <p>
+        <%= article.description%>
+    </p>
+    <cite>
+        Author: <%= article.author.name%>
+    </cite> <br>
+
+    Tags:<% article.tags.forEach((tag)=>{ %>
+        <span>
+            <%=tag%>
+        </span>
+        <% })%> <br>
+
+
+            <span>
+                <%=article.likes%>
+            </span>
+            <a href="/articles/<%=article._id%>/like">Like</a>
+            <a href="/articles/<%=article._id%>/dislike">Dislike</a> <br>
+            <a href="/articles/<%=article._id%>/edit">Edit</a>
+            <a href="/articles/<%=article.id%>/delete">Delete</a>
+
+
+            <form action="/articles/<%=article._id%>/comment" method="POST">
+                <h2>Comment</h2>
+                <input type="text" name="title" placeholder="Title">
+                <button type="submit">Comment</button>
+            </form>
+
+            <% article.comment.forEach((commnt)=>{ %>
+
+                <span>
+                    <%= commnt.title%>
+                </span> <br>
+                <span>
+                    <%=commnt.like%>
+                </span> <br>
+                <a href="/comments/<%=commnt._id%>/like">Like</a>
+                <a href="/comments/<%=commnt._id%>/dislike">dislike</a> <br>
+                <a href="/comments/<%=commnt._id%>/edit">Edit</a>
+                <a href="/comments/<%=commnt._id%>/delete">Delete</a> <br>
+
+                <% })%>
+
+                    <% include partial/footer%>

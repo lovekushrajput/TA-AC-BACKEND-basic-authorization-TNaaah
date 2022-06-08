@@ -1,0 +1,14 @@
+<% include partial/header%>
+
+    <% articles.forEach((article)=>{ %>
+        <h2>
+            <a href="/articles/<%=article._id%>">
+                <%= article.title %>
+            </a>
+        </h2>
+
+        <p>
+            <%= article.description %>...
+        </p>
+        <% }) %>
+            <% include partial/footer%>

@@ -1,0 +1,9 @@
+<% include partial/header %>
+    <form action="/articles/new" method="POST">
+        <h2>Add Article</h2>
+        <input type="text" name="title" placeholder="Title"> <br>
+        <textarea name="description" rows="10" placeholder="Description"></textarea> <br>
+        <input type="text" name="tags" placeholder="Tags"> <br>
+        <button type="submit">Add article</button>
+    </form>
+    <% include partial/footer%>
