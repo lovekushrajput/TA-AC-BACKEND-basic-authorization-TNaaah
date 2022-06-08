@@ -1,0 +1,19 @@
+<form action="/users/register" method="POST">
+    <h2>Register</h2>
+    <% if(err) { %>
+        <p>
+            <%= err %>
+        </p>
+        <% }%>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="city" placeholder="City">
+            <input type="submit" value="Register">
+</form>
+<style>
+    p {
+        color: red;
+    }
+</style>
+<% include partial/footer%>
