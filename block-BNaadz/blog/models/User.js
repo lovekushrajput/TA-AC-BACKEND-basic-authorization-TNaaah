@@ -26,8 +26,4 @@ userSchema.methods.varifyPassword = function (password, cb) {
     })
 }
 
-userSchema.methods.fullName = function () {
-    return this.firstName + this.lastName
-}
-
 module.exports = mongoose.model('User', userSchema)
