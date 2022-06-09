@@ -1,0 +1,7 @@
+<% include partial/header %>
+    <form action="/comments/<%=comment._id%>/edit" method="POST">
+        <h2>Update Comment</h2>
+        <input type="text" name="title" placeholder="Title" value="<%=comment.title%>">
+        <button type="submit">Update Comment</button>
+    </form>
+    <% include partial/footer%>

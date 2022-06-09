@@ -1,0 +1,10 @@
+<% include partial/header %>
+
+    <form action="/articles/<%=article._id%>/edit%>" method="POST">
+        <h2>Update Article</h2>
+        <input type="text" name="title" placeholder="Title" value="<%=article.title%>"> <br>
+        <textarea name="description" rows="10" placeholder="Description"><%=article.description%></textarea> <br>
+        <input type="text" name="tags" placeholder="Tags" value="<%=article.tags%>"> <br>
+        <button type="submit">Update article</button>
+    </form>
+    <% include partial/footer%>

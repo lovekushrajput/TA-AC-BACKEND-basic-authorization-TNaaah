@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <% if(user){ %>
+        <header>
+            <nav>
+                <ul>
+                    <h2><%=user.name%></h2>
+                    <li>
+                    <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/articles/new">Add Article</a>
+                    </li>
+                    <li>
+                        <a href="/users/articles">My Articles</a>
+                    </li>
+                    <li>
+                        <a href="/users/logout">Logout</a> <br>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <% } else { %>
+            <header>
+                <nav>
+                    <ul>
+                             <li>
+                            <a href="/users/register">Register</a> <br>
+                        </li>
+                        <li>
+                            <a href="/users/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/users/articles">My Articles</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <%}%>
