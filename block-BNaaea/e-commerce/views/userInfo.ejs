@@ -1,0 +1,12 @@
+<%include partial/header%>
+
+ <h2>
+    <%=user.name%>
+</h2>
+
+<p><%=user.email%></p>
+
+<p><%=user.city%></p> 
+
+<a href="/admin/block/<%= user._id%>">Block</a>
+<a href="/admin/unblock/<%= user._id%>">Unblock</a>

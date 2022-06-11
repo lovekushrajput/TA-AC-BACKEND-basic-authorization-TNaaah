@@ -1,0 +1,65 @@
+<% include partial/header %>
+    <h1 class="admin-h1"> Admin Dashboard</h1>
+    <a href="/admin/product">Add Product</a> <br>
+
+    <section class="admin-section">
+        <article class="admin-article">
+            <%products.forEach((product)=>{ %>
+                <div class="div">
+
+                    <img src="/images/<%=product.productImage%>" alt="<%= product.productImage%>">
+
+
+                    <div>
+                        <h2>
+                            <%=product.name%>
+                        </h2>
+                        <p>
+                            Quantity: <%=product.quantity%>
+                        </p>
+                        <span>
+                            ₹ <%=product.price%>
+                        </span>
+                        <p>
+                            Category: <%=product.category%>
+                        </p>
+                        <a href="/admin/product/<%=product._id%>/edit">Edit</a>
+                        <a href="/admin/product/<%=product._id%>/delete">Delete</a>
+                    </div>
+
+                </div>
+                <hr>
+                <%})%>
+
+        </article>
+
+        <aside>
+            <!-- all products -->
+            <a href="/admin">All Products</a>
+            <!-- All users -->
+            <form action="/admin/filter" method="GET">
+                <select name="users" id="users">
+                    <%users.forEach((user)=>{ %>
+                        <option value="<%=user._id%>">
+                            <%=user.name%>
+                        </option>
+                        <%})%>
+                </select>
+                <button type="submit">submit</button>
+            </form>
+
+            <!-- Category -->
+            <form action="/admin/filter" method="GET">
+                <h2>Filter by Category</h2>
+                <select name="category" id="category">
+                    <%categories.forEach((category)=>{ %>
+                        <option value="<%=category%>">
+                            <%=category%>
+                        </option>
+                        <%})%>
+                </select>
+                <button type="submit">submit</button>
+            </form>
+        </aside>
+    </section>
+    <% include partial/footer %>

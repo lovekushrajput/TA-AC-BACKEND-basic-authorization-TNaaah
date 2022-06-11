@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <%if(user){%>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">   E-commerce</a>
+                    </li>
+                    <div>
+                        <li>
+                            <%= user.name%>
+                        </li>
+                        <li>
+                            <a href="/users/register">Register</a>
+                        </li>
+                        <li>
+                            <a href="/users/logout">logout</a>
+                        </li>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <%} else {%>
+            <header>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/users/register">Register</a> <br>
+
+                        </li>
+                        <li>
+                            <a href="/users/login">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <%}%>

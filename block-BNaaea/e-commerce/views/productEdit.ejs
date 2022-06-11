@@ -1,0 +1,14 @@
+<%include partial/header%>
+<h2>Update Product</h2>
+
+<form action="/admin/product/<%=product._id%>/edit" method="POST" enctype="multipart/form-data">
+     <input type="text" name="name" placeholder="Name" value="<%= product.name%>"> 
+     <input type="number" name="quantity" placeholder="Quantity" value="<%= product.quantity%>">
+     <input type="number" name="category" placeholder="Category" value="<%= product.category%>">
+    <input type="number" name="price" placeholder="Price" value="<%= product.price%>">
+    <input type="hidden" name="productImage" value="<%= product.productImage%>">
+    <input type="file" name="productImage" value="<%= product.productImage%>">
+   <img src="/images/<%= product.productImage%>" alt="<%= product.productImage%>"> 
+    <input type="submit" value="Update Product">
+</form>
+

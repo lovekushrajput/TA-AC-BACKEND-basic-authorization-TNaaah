@@ -1,0 +1,14 @@
+<% include partial/header%>
+    <form action="/users/register" method="POST">
+        <h2>Register</h2>
+        <%if(error){%>
+            <p>
+                <%=error%>
+            </p>
+            <%}%>
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="city" placeholder="City">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">register</button>
+    </form>
