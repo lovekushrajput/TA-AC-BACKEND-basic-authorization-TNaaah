@@ -1,0 +1,30 @@
+<% include partial/header%>
+    <a href="/users/cart">Cart</a>
+
+    <%products.forEach((product)=>{ %>
+        <div>
+            <img src="/images/<%=product.productImage%>" alt="<%= product.productImage%>">
+
+            <h2>
+                <a href="/users/product/<%= product._id%>">
+                    <%=product.name%>
+                </a>
+            </h2>
+            <span>
+                ₹ <%=product.price%>
+            </span>
+        </div>
+        <%})%>
+
+            <a href="/users">All Products</a>
+            <form action="/users/filter">
+                <h2>Filter by Category</h2>
+                <select name="category" id="category">
+                    <%categories.forEach((category)=>{ %>
+                        <option value="<%=category%>">
+                            <%=category%>
+                        </option>
+                        <%})%>
+                </select>
+                <button type="submit">submit</button>
+            </form>

@@ -1,0 +1,23 @@
+<% include partial/header%>
+<a href="/users/cart">Cart</a> <br>
+<a href="/users">All products</a>
+<div>
+    <img src="/images/<%=product.productImage%>" alt="<%= product.productImage%>">
+
+    <h2>
+        <%=product.name%>
+    </h2>
+    <p>
+        Quantity: <%=product.quantity%>
+    </p>
+    <span>
+        ₹ <%=product.price%>
+    </span> <br>
+    <p>
+        Category: <%=product.category%>
+    </p>
+    <span><%=product.like%></span>
+    <a href="/users/product/<%=product._id%>/like">like</a> <br>
+    <a href="/users/product/<%=product._id%>/dislike">dislike</a> <br>
+    <a href="/users/product/<%=product._id%>/cart">Add to Cart</a>
+</div>
