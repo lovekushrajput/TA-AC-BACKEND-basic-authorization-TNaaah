@@ -1,0 +1,12 @@
+<% include partial/header%>
+    <form action="/users/login" method="POST">
+        <h2>Login</h2>
+        <%if(error){%>
+            <p>
+                <%=error%>
+            </p>
+            <%}%>
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">login</button>
+    </form>
