@@ -1,0 +1,35 @@
+<%include partial/header%>
+    <h2 class="dashboard">Admin Dashboard</h2>
+    <a href="/podcast/new" class="update-btn">Upload Podcast</a> <br>
+    
+    <% if(podcasts) { %>
+
+    <% podcasts.forEach((podcast)=>{ %>
+        <article>
+
+            <div class="parent-div">
+            <img src="/podcast/<%=podcast.cover_image%>" alt="<%=podcast.cover_image%>" class="img">
+
+            <div class="child">
+                <h2>
+                    <%=podcast.description%>
+                </h2>
+                <cite>
+                 <%= podcast.author%>
+                </cite> <br>
+            <audio controls>
+                <source src="/podcast/<%=podcast.audio%>" type="audio/mpeg">
+            </audio> 
+<div class="buttons">
+    <a href="/podcast/<%=podcast._id%>/edit">Edit</a>
+    <a href="/podcast/<%=podcast._id%>/delete">Delete</a>
+</div>
+         
+        </div>
+    </div>
+    </article> 
+        <% }) %>
+
+  <%  } else { %>
+<p>No Podcaste ☹</p>
+   <% } %>
