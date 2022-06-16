@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<div class="edit-form">
+    <form action="/podcast/<%=podcast._id%>/edit" enctype="multipart/form-data" method="POST">
+        <h2>Update Podcast</h2>
+
+        <label>Audio</label>
+        <input type="hidden" name="audio" placeholder="Title" value="<%=podcast.audio%>">
+        <input type="file" name="audio" placeholder="audio">
+        <audio controls>
+            <source src="/podcast/<%=podcast.audio%>" type="audio/mpeg">
+        </audio>
+
+        <input type="text" name="description" value="<%=podcast.description%>">
+        <input type="text" name="author" value="<%=podcast.author%>">
+        <label>Subcription</label>
+        <input type="text" name="category" value="<%=podcast.category%>">
+
+        <label>Cover-Image</label>
+        <input type="hidden" name="cover_image" placeholder="cover_image" value="<%=podcast.cover_image%>">
+        <input type="file" name="cover_image" placeholder="Gallery">
+        <img src="/podcast/<%=podcast.cover_image%>" alt="<%=podcast.cover_image%>">
+
+        <div class="btn">
+            <button type="submit">update podcast</button>
+        </div>
+
+    </form>
+</div>

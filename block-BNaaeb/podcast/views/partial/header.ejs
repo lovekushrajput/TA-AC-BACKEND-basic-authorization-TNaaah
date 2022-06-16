@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+        </style>
+</head>
+
+<body>
+    <% if(user) { %>
+
+        <% if(user.email === 'lovekushrazput143@gmail.com') { %>
+            <header>
+                <nav>
+                    <ul>
+                        <li class="brand">
+                            Podcast<small>.</small>
+                        </li>
+
+                        <div class="col-1">
+                        <li>
+                            <div class="dropdown">
+                                <span>Profile</span>
+                                <div class="dropdown-content">
+                                    <p>
+                                        <a href="#">
+                                         Name:   <%= user.name%>(Admin)
+                                        </a>
+                                    </p>
+
+                                    <p>
+                                     Email:   <%= user.email%>
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="/users/register">Register</a>
+                        </li>
+                        <li>
+                            <a href="/users/logout">Logout</a>
+                        </li>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+            <% } else { %>
+                <header>
+                    <nav>
+                        <ul>
+                            <li class="brand">
+                                Podcast<small>.</small>
+                            </li>
+
+
+                            <div class="col-1">
+                            <li>
+                                <div class="dropdown">
+                                    <span>Profile</span>
+                                    <div class="dropdown-content">
+                                        <p>
+                                            <a href="#">
+                                                <%= user.name%>
+                                            </a>
+                                        </p>
+
+                                        <p>
+                                            <%= user.email%>
+                                        </p>
+                                        <h2>
+                                            <%= user.subcription%>
+                                        </h2>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <a href="/users/register">Register</a>
+                            </li>
+                            <li>
+                                <a href="/users/logout">Logout</a>
+                            </li>
+                        </div>
+                        </ul>
+                    </nav>
+                </header>
+                <% } %>
+                    <% } else { %>
+
+                        <header>
+                            <nav>
+                                <ul>
+                                    <li class="brand">
+                                        Podcast<small>.</small>
+                                    </li>
+
+                                    <div class="col-1">
+                                        <li>
+                                            <a href="/users/register">Register</a>
+                                        </li>
+                                        <li>
+                                            <a href="/users/login">Login</a>
+                                        </li>
+                                    </div>
+                            
+                                </ul>
+                            </nav>
+                        </header>
+                        <% } %>

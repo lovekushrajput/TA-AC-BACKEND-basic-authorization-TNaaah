@@ -1,0 +1,27 @@
+<% include partial/header %>
+    <a href="/users/<%=user._id%>/upgrade" class="update-btn">Update Subcription</a>
+
+    <% podcasts.forEach((podcast)=>{ %>
+        <article>
+
+
+
+            <div class="parent-div">
+                <img src="/podcast/<%=podcast.cover_image%>" alt="<%=podcast.cover_image%>" class="img">
+
+                <div class="child">
+                    <h2>
+                        <%=podcast.description%>
+                    </h2>
+                    <cite>
+                        <%= podcast.author%>
+                    </cite> <br>
+                    <audio controls>
+                        <source src="/podcast/<%=podcast.audio%>" type="audio/mpeg">
+                    </audio>
+                </div>
+
+
+            </div>
+        </article>
+        <% }) %>
