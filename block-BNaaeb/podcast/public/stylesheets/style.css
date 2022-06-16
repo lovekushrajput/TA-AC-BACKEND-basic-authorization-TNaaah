@@ -1,0 +1,384 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* custom */
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* general classes */
+.center {
+  text-align: center;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.padding {
+  padding: 1rem;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+p {
+  color: red;
+}
+
+button {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+/* header */
+header {
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.brand {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.brand small {
+  color: red;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-1 {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  font-size: 1.2rem;
+}
+
+.col-1 span {
+  color: #12b9c2;
+}
+
+.col-1 a {
+  color: #757f84;
+}
+
+/* podcast */
+article {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.parent-div {
+  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.parent-div img {
+  width: 30%;
+}
+
+.parent-div h2 {
+  color: #12b9c2;
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.child {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-btn{
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  margin-left: 3rem;
+  background-color: rgb(236, 133, 133);
+  color: white;
+}
+
+.buttons{
+  display: flex;
+  column-gap: 3rem;
+}
+
+.buttons a{
+  color:  white;
+  margin-top: 0.5rem;
+  padding: 0.3rem 1rem;
+  background-color: #757f84;
+}
+
+.dashboard{
+  font-size: 1.4rem;
+  text-align: center;
+}
+/* podcast-Edit */
+.edit-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 98vh; */
+}
+
+.edit-form h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: cornflowerblue;
+}
+
+.edit-form form {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  /* height: 90vh; */
+  border: 1px solid gainsboro;
+  width: 40%;
+  row-gap: 1rem;
+}
+
+.edit-form input {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.edit-form label {
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+
+.edit-form img {
+  width: 20%;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn button {
+  padding: 0.6rem 1rem;
+  width: 80%;
+  text-transform: uppercase;
+  background-color: cornflowerblue;
+  color: white;
+  border: 1px solid transparent;
+}
+
+
+
+/* //.dropdown */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  cursor: pointer;
+  display: block;
+}
+
+/* //register */
+.form-control{
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+.form-control form{
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.4rem;
+  width: 40%;
+  border: 2px solid rgb(230, 230, 230);
+  padding: 2rem;
+}
+
+.form-control select{
+  padding: 0.6rem 0;
+}
+
+.form-control h2{
+  color: #3a86e4;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.form-control form input{
+  border: 1.3px solid rgb(221, 221, 223);
+  outline-color: #3a86e4;
+  padding: 0.6rem .2rem;
+}
+
+.form-control button{
+  background-color: #3a86e4;
+  border: 1px solid #3a86e4;
+  color: white;
+  padding: 0.6rem 0;
+}
